@@ -1,0 +1,110 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #1a1d23; /* Deep Slate Blue */
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the Timer */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    width: 400px;
+}
+
+h1 {
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    color: #a5b4fc; /* Soft Indigo */
+}
+
+/* Input Section */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+input[type="number"] {
+    width: 70px;
+    background: #2d343e;
+    border: 1px solid #3f4854;
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #6366f1;
+}
+
+/* The Countdown Display */
+.timer-display {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 2rem 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* Specific Button Colors */
+button[onclick*="startTime"] {
+    background-color: #4f46e5; /* Indigo */
+    color: white;
+}
+
+button[onclick*="pauseTime"] {
+    background-color: #374151; /* Charcoal */
+    color: white;
+}
+
+button[onclick*="resetTime"] {
+    background-color: #991b1b; /* Deep Red */
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
