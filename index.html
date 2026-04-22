@@ -75,7 +75,13 @@
 
                 if (hr === 0 && min === 0 && sec === 0) {
                     clearInterval(timer);
-                    alarmSound.play();
+                    
+                    console.log("Attempting to play sound...");
+                    
+                    alarmsound.play().catch(error => {
+                        console.error("Audio play failed:", error);
+                    });
+
                     alert("Time up!");
                     return;
                 }
