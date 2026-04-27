@@ -1,110 +1,101 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
 body {
-    background-color: #1a1d23; /* Deep Slate Blue */
-    color: #e0e0e0;
+    background-color: #f4f7f6; 
+    color: #2c3e50; 
+    font-family: 'Segoe UI', Arial, sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
-}
-
-/* Container for the Timer */
-.container {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 3rem;
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-    text-align: center;
-    width: 400px;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
 }
 
 h1 {
-    font-weight: 300;
-    margin-bottom: 1.5rem;
-    letter-spacing: 1px;
-    color: #a5b4fc; /* Soft Indigo */
-}
-
-/* Input Section */
-.input-group {
-    display: flex;
-    gap: 10px;
+    font-size: 1.8rem;
+    color: #1a535c; 
     margin-bottom: 2rem;
-    justify-content: center;
 }
 
-input[type="number"] {
-    width: 70px;
-    background: #2d343e;
-    border: 1px solid #3f4854;
-    border-radius: 8px;
-    padding: 10px;
-    color: #fff;
-    text-align: center;
-    outline: none;
-    transition: border 0.3s;
-}
-
-input[type="number"]:focus {
-    border-color: #6366f1;
-}
-
-/* The Countdown Display */
-.timer-display {
-    font-size: 4rem;
-    font-weight: 700;
-    margin: 2rem 0;
-    font-family: 'Courier New', Courier, monospace;
-    color: #ffffff;
-    text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-}
-
-/* Buttons */
-.button-group {
+.input-section {
     display: flex;
+    gap: 15px;
+    margin-bottom: 1rem;
+}
+
+.input-field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #4ecdc4; 
+    margin-bottom: 5px;
+}
+
+input {
+    width: 65px;
+    padding: 10px;
+    border: 2px solid #d1d8e0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1rem;
+    background: white;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4ecdc4;
+}
+
+.timer-display {
+    font-size: clamp(3rem, 10vw, 5rem); 
+    font-weight: 800;
+    color: #1a535c;
+    margin: 30px 0;
+    padding: 10px 30px;
+    border-bottom: 4px solid #ff6b6b; 
+    letter-spacing: -2px;
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
 }
 
 button {
-    padding: 12px 20px;
+    padding: 10px 25px;
+    font-size: 0.9rem;
+    font-weight: bold;
     border: none;
-    border-radius: 8px;
+    border-radius: 25px; 
     cursor: pointer;
-    font-weight: 600;
-    transition: all 0.2s ease;
-}
-
-/* Specific Button Colors */
-button[onclick*="startTime"] {
-    background-color: #4f46e5; /* Indigo */
+    transition: transform 0.2s, opacity 0.2s;
     color: white;
-}
-
-button[onclick*="pauseTime"] {
-    background-color: #374151; /* Charcoal */
-    color: white;
-}
-
-button[onclick*="resetTime"] {
-    background-color: #991b1b; /* Deep Red */
-    color: white;
-}
-
-button:hover {
-    transform: translateY(-2px);
-    filter: brightness(1.2);
+    background-color: #1a535c;
 }
 
 button:active {
-    transform: translateY(0);
+    transform: scale(0.95);
+}
+
+
+.start-btn { background-color: #4ecdc4; }
+.pause-btn { background-color: #ff9f43; }
+.reset-btn { background-color: #ff6b6b; }
+
+button:hover {
+    opacity: 0.8;
+}
+
+@media (max-width: 400px) {
+    .timer-display { font-size: 3.5rem; }
+    input { width: 55px; }
 }
